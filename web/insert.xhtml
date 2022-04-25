@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Hello from Facelets
+        <h:form>
+            name:<h:inputText value="#{jSFManagedBean.name}"></h:inputText><br/>
+            brand:<h:inputText value="#{jSFManagedBean.brandname}"></h:inputText><br/>
+            
+            <h:selectOneMenu value="#{jSFManagedBean.cid}">
+                <f:selectItems value="#{jSFManagedBean.categorylist}" var="c" itemValue="#{c.cid}" itemLabel="#{c.cname}">
+                </f:selectItems>
+            </h:selectOneMenu>
+            <h:commandButton value="save" action="#{jSFManagedBean.add()}"></h:commandButton>
+        </h:form>
+
+    </h:body>
+</html>
+
